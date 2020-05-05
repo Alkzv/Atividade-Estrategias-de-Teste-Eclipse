@@ -1,5 +1,14 @@
 package Atividade;
+import static org.junit.Assert.assertNotEquals;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 import org.junit.Test;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 
 import junit.framework.TestCase;
 
@@ -15,14 +24,35 @@ public class SushimanMatematicoTest extends TestCase {
         assertFalse(SushimanMatematico.ehPrimo(12));		
 	}
 
-    /*@Test -  Ainda n�o foram implementados 
+    @Test
 	public void testGetPrimos() {
-		fail("Not yet implemented");  
+    	//Primos entre 0 e 9 - limite mínimo
+    	List<Integer> expected = Arrays.asList(new Integer[] {2,3,5,7});    	
+    	assertEquals(expected, SushimanMatematico.getPrimos(0));
+		
+    	//Primos entre 10 e 19
+    	expected = Arrays.asList(new Integer[] {11,13,17,19});
+		assertEquals(expected, SushimanMatematico.getPrimos(1));
+		
+		//Condição onde não exitem primos deve retornar uma lista vazia
+		expected = Arrays.asList(new Integer[] {});
+		assertEquals(expected, (SushimanMatematico.getPrimos(-1)));
+		
+		//Primos entre 1000 e 1009
+		expected = Arrays.asList(new Integer[] {1009});
+		assertEquals(expected, SushimanMatematico.getPrimos(100));
+		
+		//Primos entre 99999990 e 99999999
+		expected = Arrays.asList(new Integer[] {});
+		assertEquals(expected, SushimanMatematico.getPrimos(9999999));
+		
+		//Primos entre 999999990 e 999999999 
+		expected = Arrays.asList(new Integer[] {});
+		assertEquals(expected, SushimanMatematico.getPrimos(99999999));
 	}
     
-    @Test
+    /*@Test
 	public void testGetSuperPrimos() {
 		fail("Not yet implemented");
-	} //  Ainda n�o foram implementados 
-*/
+	}*/
 }
