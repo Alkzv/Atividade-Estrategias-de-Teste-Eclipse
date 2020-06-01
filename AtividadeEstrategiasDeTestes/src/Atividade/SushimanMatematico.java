@@ -55,7 +55,7 @@ public class SushimanMatematico {
 		for(Integer i : getSuperPrimos(nDigitos)){
 			System.out.println(i);
 		}
-		System.out.print("end");
+		System.out.println("end");
 	}
 
 }
